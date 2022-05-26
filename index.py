@@ -183,10 +183,10 @@ test_tweets, test_labels = get_tweet(test_dataset)
 
 #Evaluate the model on the test dataset. 
 #test_tweets is the dataset that is being predicted.
-test_seq = get_sequences(tokenizer, testList)
-#test_labels = names_to_ids(test_labels)
-#_ = model.evaluate(test_seq, test_labels)
+test_seq = get_sequences(tokenizer, test_dataset)
+test_labels = names_to_ids(test_labels)
+_ = model.evaluate(test_seq, test_labels)
 
 #Print the confusion matrix to check the accuracy of the model
 preds = model.predict(test_seq)
-#show_confusion_matrix(test_labels, preds, index_to_class.values())
+show_confusion_matrix(test_labels, preds, index_to_class.values())
