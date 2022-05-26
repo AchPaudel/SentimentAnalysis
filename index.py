@@ -43,13 +43,14 @@ def show_confusion_matrix(y_true, y_pred, classes):
 
     
 #print('Using TensorFlow version', tf.__version__)
-names = ['id', 'user', 'tweet_id', 'content', 'likes', 'retweets', 'replies']
-test_dataset2 = pd.read_csv('/Users/achyutpaudel/Desktop/StockPerformanceAnalysis/Tweets/Tweet.csv', on_bad_lines='warn', skipinitialspace=True, names=names)
-print(test_dataset2.head())
-trueTest = test_dataset2['content']
-testList = list()
-for x in trueTest:
-    testList.append(x)
+#Custom dataset
+#names = ['id', 'user', 'tweet_id', 'content', 'likes', 'retweets', 'replies']
+#test_dataset2 = pd.read_csv('/Users/achyutpaudel/Desktop/StockPerformanceAnalysis/Tweets/Tweet.csv', on_bad_lines='warn', skipinitialspace=True, names=names)
+#print(test_dataset2.head())
+#trueTest = test_dataset2['content']
+#testList = list()
+#for x in trueTest:
+#    testList.append(x)
 
 
 dataset = nlp.load_dataset('emotion')
@@ -175,7 +176,7 @@ history = model.fit(
 )
 
 #Results
-    #show_history(history) #Uncomment to see the training history
+show_history(history) #Uncomment to see the training history
 
 #Test the model with a different dataset of tweets:
 test_dataset = dataset['test']
