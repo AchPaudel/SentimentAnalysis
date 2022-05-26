@@ -188,5 +188,5 @@ test_seq = get_sequences(tokenizer, testList)
 #_ = model.evaluate(test_seq, test_labels)
 
 #Print the confusion matrix to check the accuracy of the model
-preds = model.predict_classes(test_seq)
+preds = model.predict(test_seq)
 #show_confusion_matrix(test_labels, preds, index_to_class.values())
